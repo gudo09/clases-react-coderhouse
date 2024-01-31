@@ -6,7 +6,7 @@ import bandera from "./images/descarga.png"
 const App = ()=> {
 
   return (
-    <div>
+    <>
       <Navbar /> {/* Sintaxis para llamar a un componente */}
       {/* <h1 style={ {color: "steelblue", fontSize: "3rem"} }>Esto es un título</h1> */}
       <h1 className="title">Esto es un título</h1>
@@ -14,7 +14,7 @@ const App = ()=> {
       <h3>otra cosa</h3>
       <img src={bandera} alt="" />
       <Footer />
-    </div>
+    </>
   )
 }
 
