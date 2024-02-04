@@ -13,7 +13,7 @@ export const Navbar = ()=> {
         <li>Urbanas</li>
       </ul>
 
-      <h4>Carrito</h4>
+      <h4>Carrito de compras</h4>
       <CartWidget />
     </nav>
   )

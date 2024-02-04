@@ -1,12 +1,12 @@
-import { PiShoppingCartSimpleFill } from "react-icons/pi";
+import { HiShoppingCart } from "react-icons/hi";
 
 
 const CartWidget = () => {
   return (
     <div>
-        <span>10</span>
-        <PiShoppingCartSimpleFill color="blue"/>
-      </div>
+        <span>(13)</span>
+        <HiShoppingCart color="royalblue" title="Carrito"/>
+    </div>
   )
 }
 
