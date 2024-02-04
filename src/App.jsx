@@ -1,27 +1,16 @@
 import './App.css'
-import { useState } from 'react'
-import { Navbar } from './components/layout/Navbar'
-import { ItemListContainer } from './components/pages/ItemListContainer'
-import Counter from "./components/common/Counter"
+
+import ProbandoMUI from "./components/common/ProbandoMUI"
+import ProbandoResponsive from './components/common/ProbandoResponsive'
 
 
 const App = ()=> {
-  const [modoOscuro, setModoOscuro] = useState(false)
-  //let modoOscuro = false //no se hace de esta manera en react, se usan estados
-  console.log(modoOscuro)
-  const cambiarModo = ()=> {
-    setModoOscuro( !modoOscuro )
-  }
-
 
   return (
     <div>
-      <button onClick={ cambiarModo }>Cambiar a modo oscuro</button>
-      <Navbar />
+      <ProbandoMUI />
 
-      <ItemListContainer /> 
-
-      <Counter />
+      <ProbandoResponsive />
     </div>
   )
 }
