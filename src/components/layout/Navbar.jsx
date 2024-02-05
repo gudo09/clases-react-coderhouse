@@ -5,12 +5,17 @@ export const Navbar = ()=> {
 
   return (
     <nav>
-      <h3>Logo</h3>
+      <h3>Tienda de videojuegos</h3>
 
       <ul>
-        <li>Todas</li>
-        <li>Deportivas</li>
-        <li>Urbanas</li>
+        <li>Consolas
+          <ul>
+            <li>Nintendo Switch</li>
+            <li>Playstation 5</li>
+            <li>Xbox Series</li>
+          </ul>
+        </li>
+        <li>PC</li>
       </ul>
 
       <h4>Carrito de compras</h4>
