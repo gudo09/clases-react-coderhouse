@@ -10,12 +10,12 @@ export const Navbar = ()=> {
       <ul>
         <li>Consolas
           <ul>
-            <li>Nintendo Switch</li>
-            <li>Playstation 5</li>
-            <li>Xbox Series</li>
+            <li><a href="#">Nintendo Switch</a></li>
+            <li><a href="#">Playstation 5</a></li>
+            <li><a href="#">Xbox Seriesh</a></li>
           </ul>
         </li>
-        <li>PC</li>
+        <li><a href="">PC</a></li>
       </ul>
 
       <h4>Carrito de compras</h4>
