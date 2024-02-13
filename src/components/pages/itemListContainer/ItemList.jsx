@@ -1,9 +1,13 @@
 import ProductCard from "../../common/ProductCard";
+import Grid from "@mui/material/Grid";
 
 const ItemList = ({ items }) => {
   //console.log( items ) // uso console.log para testear que se pasen bien las props
   return (
-    <div>
+    <Grid container 
+      sx={{mx:'auto'}}
+      columnGap={4}
+      rowGap={4}>
       {/* <div style={{ border: "solid black" }}>
         <img src={items[0].image} alt="" />
         <h2>{items[0].title}</h2>
@@ -25,18 +29,21 @@ const ItemList = ({ items }) => {
       })}
       */}
       {/* Método 2 - Desestructurando */}
-      {items.map(({id, title, image, description, price}) => {
+      {items.map(({ id, title, image, description, price }) => {
         return (
-          <ProductCard
-            key={id}
-            title={title}
-            image={image}
-            description={description}
-            price={price}
-          />
+          <Grid item key={id} >
+            
+            <ProductCard
+              key={id}
+              title={title}
+              image={image}
+              description={description}
+              price={price}
+            />
+          </Grid>
         );
       })}
-    </div>
+    </Grid>
   );
 };
 export default ItemList;

@@ -8,7 +8,7 @@ export let products = [
     description: "asd",
     image:
       "https://cloudfront-eu-central-1.images.arcpublishing.com/prisaradiolos40/XVRM4ZSAIRIFVOQ5U5EFOYJ6ZQ.jpg",
-    stock: 1,
+    stock: 10,
     category: "asd",
   },
   {
@@ -17,7 +17,7 @@ export let products = [
     price: 1,
     description: "asd",
     image: "url",
-    stock: 1,
+    stock: 10,
     category: "asd",
   },
   {
@@ -26,7 +26,7 @@ export let products = [
     price: 1,
     description: "asd",
     image: "url",
-    stock: 1,
+    stock: 10,
     category: "asd",
   },
   {
@@ -35,7 +35,7 @@ export let products = [
     price: 1,
     description: "asd",
     image: "url",
-    stock: 1,
+    stock: 10,
     category: "asd",
   },
 ];

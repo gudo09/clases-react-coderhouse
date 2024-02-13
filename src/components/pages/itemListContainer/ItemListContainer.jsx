@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { products } from "../../../productsMock";
 
+
 export const ItemListContainer = () => {
   // todos los useEffect se ejecutan despues del montaje del componente
 
@@ -11,7 +12,7 @@ export const ItemListContainer = () => {
   //dentro del useEffect ponemos la solicitud y la manipulación de la promesa
   useEffect(() => {
     // creamos o solicitamos
-    const tarea = new Promise((resolve, reject) => {
+    const tarea = new Promise((resolve /*, reject*/) => {
       resolve(products);
       //reject("ERROR: Sin autorización")
     });
@@ -32,9 +33,9 @@ export const ItemListContainer = () => {
   //console.log("se actualiza el componente");
   return (
     <>
-    {
-      items.length > 0 && <ItemList items={items} /> //monto el componente en el segundo renderizado porque en el primero el estado items es un arreglo vacío y da error
-    }
+      {
+        items.length > 0 && <ItemList items={items} /> //monto el componente en el segundo renderizado porque en el primero el estado items es un arreglo vacío y da error
+      }
     </>
   );
 };
