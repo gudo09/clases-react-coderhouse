@@ -1,0 +1,39 @@
+import { useEffect, useState } from "react";
+
+export const useFetch = (url) => {
+  const [state, setState] = useState({
+    data: null,
+    isLoading: true,
+  });
+
+  const getData = async () => {
+    // seteo isloading como true para indicar que está esperando la respuesta de la peticion
+    setState({
+      ...state,
+      isLoading: true,
+    });
+
+    const res = await fetch(url);
+    console.log(res);
+    const resData = await res.json();
+    console.log(resData);
+    setState({
+      data: resData,
+      isLoading: false,
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return {
+    data: state.data,
+    isLoading: state.isLoading,
+  };
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
+};

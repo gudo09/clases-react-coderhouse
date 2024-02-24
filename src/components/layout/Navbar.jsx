@@ -1,6 +1,6 @@
-import CartWidget from "../common/CartWidget"
+import {CartWidget} from "../common/CartWidget"
 
-//exportacion nombrada (para exportar más de una cosa)
+
 export const Navbar = ()=> {
 
   return (
@@ -12,7 +12,7 @@ export const Navbar = ()=> {
           <ul>
             <li><a href="#">Nintendo Switch</a></li>
             <li><a href="#">Playstation 5</a></li>
-            <li><a href="#">Xbox Seriesh</a></li>
+            <li><a href="#">Xbox Series</a></li>
           </ul>
         </li>
         <li><a href="">PC</a></li>
@@ -23,5 +23,3 @@ export const Navbar = ()=> {
     </nav>
   )
 }
-
-//export default Navbar //exportacion por defecto (para exportar sólo una cosa)

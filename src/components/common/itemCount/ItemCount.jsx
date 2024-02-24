@@ -1,7 +1,7 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box, Button, Typography } from "@mui/material";
 
-const ItemCount = ({ counter, addOne, subOne }) => {
+export const ItemCount = ({ counter, addOne, subOne, stock }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Box
@@ -28,12 +28,17 @@ const ItemCount = ({ counter, addOne, subOne }) => {
             border: 1,
             borderRadius: 1,
             borderColor: "rgba(25, 118, 210, 0.5)",
+            userSelect: "none"
           }}
         >
           {counter}
         </Typography>
 
-        <Button variant="outlined" onClick={addOne}>
+        <Button
+          variant="outlined"
+          onClick={addOne}
+          disabled={counter === stock ? true : false}
+        >
           +
         </Button>
       </Box>
@@ -48,5 +53,3 @@ const ItemCount = ({ counter, addOne, subOne }) => {
     </Box>
   );
 };
-
-export default ItemCount;

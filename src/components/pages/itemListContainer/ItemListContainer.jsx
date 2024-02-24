@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
+import { ItemList } from "./ItemList";
 import { products } from "../../../productsMock";
 
-
 export const ItemListContainer = () => {
-  // todos los useEffect se ejecutan despues del montaje del componente
+  //todos los useEffect se ejecutan despues del montaje del componente
 
   //creamos un estado para almacenar el arreglo de productos
   const [items, setItems] = useState([]);
@@ -12,14 +11,14 @@ export const ItemListContainer = () => {
   //dentro del useEffect ponemos la solicitud y la manipulación de la promesa
   useEffect(() => {
     // creamos o solicitamos
-    const tarea = new Promise((resolve /*, reject*/) => {
+    const getProducts = new Promise((resolve , reject) => {
       resolve(products);
-      //reject("ERROR: Sin autorización")
+      reject("ERROR: Sin autorización")
     });
 
     // manipulamos la promesa
-    //tarea.then( (res)=>{} ).catch( (error)=>{} )
-    tarea
+    //getProducts.then( (res)=>{} ).catch( (error)=>{} )
+    getProducts
       .then((res) => {
         setItems(res); // promesa resuelta del resolve
       })
@@ -28,9 +27,8 @@ export const ItemListContainer = () => {
       });
   }, []);
 
-  //console.log(items);
 
-  //console.log("se actualiza el componente");
+
   return (
     <>
       {

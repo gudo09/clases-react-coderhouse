@@ -1,7 +1,7 @@
 import { HiShoppingCart } from "react-icons/hi";
 
 
-const CartWidget = () => {
+export const CartWidget = () => {
   return (
     <div>
         <HiShoppingCart color="royalblue" title="Carrito"/>
@@ -9,5 +9,3 @@ const CartWidget = () => {
     </div>
   )
 }
-
-export default CartWidget

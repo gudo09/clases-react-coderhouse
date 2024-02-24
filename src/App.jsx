@@ -4,7 +4,7 @@ import { Navbar } from "./components/layout/Navbar";
 import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
 
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <CssBaseline />
@@ -14,5 +14,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;
