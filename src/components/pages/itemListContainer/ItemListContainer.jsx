@@ -1,38 +1,34 @@
 import { useState, useEffect } from "react";
 import { ItemList } from "./ItemList";
-import { products } from "../../../productsMock";
+import { getProducts } from "../../../productsMock";
+import { LoadingProductos } from "../../common/LoadingProductos";
 
 export const ItemListContainer = () => {
-  //todos los useEffect se ejecutan despues del montaje del componente
 
   //creamos un estado para almacenar el arreglo de productos
   const [items, setItems] = useState([]);
+  //y otro para indicar que se está cargando mientras la petición se resuelve
+  const [isLoading, setIsLoading] = useState(true);
 
-  //dentro del useEffect ponemos la solicitud y la manipulación de la promesa
   useEffect(() => {
-    // creamos o solicitamos
-    const getProducts = new Promise((resolve , reject) => {
-      resolve(products);
-      reject("ERROR: Sin autorización")
-    });
+    //dentro del useEffect ponemos la solicitud y la manipulación de la promesa
 
-    // manipulamos la promesa
-    //getProducts.then( (res)=>{} ).catch( (error)=>{} )
-    getProducts
-      .then((res) => {
-        setItems(res); // promesa resuelta del resolve
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+
+    getProducts()
+    .then( resp => {
+      setItems(resp);
+      setIsLoading(false);
+    })
   }, []);
-
-
 
   return (
     <>
       {
-        items.length > 0 && <ItemList items={items} /> //monto el componente en el segundo renderizado porque en el primero el estado items es un arreglo vacío y da error
+        isLoading ? (
+          <LoadingProductos />
+        ) : (
+          items.length > 0 && <ItemList items={items} />
+        ) //monto el componente en el segundo renderizado porque en el primero el estado items es un arreglo vacío y da error
       }
     </>
   );

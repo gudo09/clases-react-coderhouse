@@ -1,4 +1,4 @@
-import {CartWidget} from "../common/CartWidget"
+import {CartWidget} from "../common"
 
 
 export const Navbar = ()=> {

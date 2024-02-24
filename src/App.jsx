@@ -1,16 +1,20 @@
 import { CssBaseline } from "@mui/material";
 import "./App.css";
 import { Navbar } from "./components/layout/Navbar";
-import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
-
+import { ItemListContainer } from "./components/pages";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
     <>
-      <CssBaseline />
-      <Navbar />
-
-      <ItemListContainer greeting={"Hola 👋🏼 (esto es un saludo !)"} />
+      <BrowserRouter>
+        {/*Reseteo los estilos de CSS con el componente CssBaseline de Material UI*/}
+        <CssBaseline />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

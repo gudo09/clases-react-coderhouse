@@ -1,5 +1,5 @@
 import { ItemCount } from "./ItemCount";
-import { useCount } from "../../hooks/useCount";
+import { useCount } from "../../hooks";
 
 export const ItemCountContainer = ({ stock }) => {
   //uso el custom hook
