@@ -4,7 +4,6 @@ import { ItemDetailContainer, ItemListContainer } from "./components/pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Cart } from "./components/common";
 
-
 export const App = () => {
   return (
     <>
@@ -13,9 +12,10 @@ export const App = () => {
         <CssBaseline />
         <Navbar />
         <Routes>
-          <Route path="/" element={ <ItemListContainer /> }/>
-          <Route path="/cart" element={ <Cart /> }/>
-          <Route path="/item/:id" element={ <ItemDetailContainer /> }/>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/category/:category" element={<ItemListContainer />} />
         </Routes>
       </BrowserRouter>
     </>

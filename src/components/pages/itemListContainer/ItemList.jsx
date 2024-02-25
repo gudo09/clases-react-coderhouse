@@ -12,6 +12,7 @@ export const ItemList = ({ items }) => {
             <Grid item key={id}>
               <ProductCard
                 key={id}
+                id={id}
                 title={title}
                 image={image}
                 description={description}

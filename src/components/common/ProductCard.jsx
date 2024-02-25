@@ -6,9 +6,9 @@ import Typography from "@mui/material/Typography";
 
 import { blueGrey } from "@mui/material/colors";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
-
-export const ProductCard = ({ image, title, price }) => {
+export const ProductCard = ({ id, image, title, price }) => {
   return (
     <Card
       sx={{
@@ -36,12 +36,12 @@ export const ProductCard = ({ image, title, price }) => {
 
       <CardActions sx={{ mx: "auto" }}>
         {/* <ItemCountContainer stock={stock} /> */}
-        <Button
-        variant="contained"
-        sx={{ mb: 2 }}
-      >
-        Ver detalles
-      </Button>
+
+        <Link to={`/item/${(id)}`}>
+          <Button variant="contained" sx={{ mb: 2 }}>
+            Ver detalles
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

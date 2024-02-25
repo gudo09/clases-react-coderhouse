@@ -1,2 +1,2 @@
-export { ItemDetailContainer } from "./itemDetailContainer";
-export { ItemDetail } from "./ItemDetail";
+export { ItemDetail } from './ItemDetail';
+export { ItemDetailContainer } from './ItemDetailContainer';

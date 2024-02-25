@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CartWidget } from "../common";
+import { Button } from "@mui/material";
 
 export const Navbar = () => {
   return (
@@ -12,19 +13,21 @@ export const Navbar = () => {
         <li>
           Consolas
           <ul>
-            <li>
-              <a href="#">Nintendo Switch</a>
-            </li>
-            <li>
-              <a href="#">Playstation 5</a>
-            </li>
-            <li>
-              <a href="#">Xbox Series</a>
-            </li>
+            <Link to="/category/nintendo-switch">
+              <Button>Nintendo Switch</Button>
+            </Link>
+            <Link to="/category/playstation-5">
+              <Button>Playstation 5</Button>
+            </Link>
+            <Link to="/category/xbox-series">
+              <Button>Xbox Series</Button>
+            </Link>
           </ul>
         </li>
         <li>
-          <a href="">PC</a>
+          <Link to="/category/pc">
+            <Button>PC</Button>
+          </Link>
         </li>
       </ul>
 
