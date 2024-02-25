@@ -8,7 +8,6 @@ export const ItemCountContainer = ({ stock }) => {
   const addOne = () => {
     if (count < stock) {
       increment();
-      console.log(count);
     } else {
       alert("stock maximo");
     }
@@ -22,5 +21,7 @@ export const ItemCountContainer = ({ stock }) => {
     }
   };
 
-  return <ItemCount counter={count} addOne={addOne} subOne={subOne} stock={stock} />;
+  return (
+    <ItemCount counter={count} addOne={addOne} subOne={subOne} stock={stock} />
+  );
 };

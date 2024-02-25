@@ -9,6 +9,19 @@ export const getProducts = () => {
   });
 };
 
+export const getProduct = (id) => {
+  return new Promise((resolve, reject) => {
+    if (products.length > 0) {
+      const item = products.find((prod) => prod.id === parseInt(id));
+
+      setTimeout(() => {
+        item
+          ? resolve(item)
+          : reject(`No se encuentra el producto con el id ${id}`);
+      }, 1000);
+    }
+  });
+};
 const products = [
   {
     id: 1,

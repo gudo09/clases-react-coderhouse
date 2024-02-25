@@ -1,7 +1,9 @@
 import { CssBaseline } from "@mui/material";
 import { Navbar } from "./components/layout/Navbar";
-import { ItemListContainer } from "./components/pages";
+import { ItemDetailContainer, ItemListContainer } from "./components/pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Cart } from "./components/common";
+
 
 export const App = () => {
   return (
@@ -11,7 +13,9 @@ export const App = () => {
         <CssBaseline />
         <Navbar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={ <ItemListContainer /> }/>
+          <Route path="/cart" element={ <Cart /> }/>
+          <Route path="/item/:id" element={ <ItemDetailContainer /> }/>
         </Routes>
       </BrowserRouter>
     </>

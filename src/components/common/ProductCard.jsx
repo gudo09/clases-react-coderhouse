@@ -8,7 +8,7 @@ import { blueGrey } from "@mui/material/colors";
 import { Button } from "@mui/material";
 
 
-export const ProductCard = ({ image, title, price, description, stock }) => {
+export const ProductCard = ({ image, title, price }) => {
   return (
     <Card
       sx={{
@@ -27,10 +27,6 @@ export const ProductCard = ({ image, title, price, description, stock }) => {
 
         <Typography gutterBottom variant="h5" component="div">
           {title}
-        </Typography>
-
-        <Typography variant="body2" color="text.secondary">
-          {description}
         </Typography>
 
         <Typography variant="body2" color="text.secondary">

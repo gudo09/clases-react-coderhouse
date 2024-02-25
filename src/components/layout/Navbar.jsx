@@ -1,25 +1,37 @@
-import {CartWidget} from "../common"
+import { Link } from "react-router-dom";
+import { CartWidget } from "../common";
 
-
-export const Navbar = ()=> {
-
+export const Navbar = () => {
   return (
     <nav>
-      <h3>Tienda de videojuegos</h3>
+      <Link to="/">
+        <h3>Tienda de videojuegos</h3>
+      </Link>
 
       <ul>
-        <li>Consolas
+        <li>
+          Consolas
           <ul>
-            <li><a href="#">Nintendo Switch</a></li>
-            <li><a href="#">Playstation 5</a></li>
-            <li><a href="#">Xbox Series</a></li>
+            <li>
+              <a href="#">Nintendo Switch</a>
+            </li>
+            <li>
+              <a href="#">Playstation 5</a>
+            </li>
+            <li>
+              <a href="#">Xbox Series</a>
+            </li>
           </ul>
         </li>
-        <li><a href="">PC</a></li>
+        <li>
+          <a href="">PC</a>
+        </li>
       </ul>
 
-      <h4>Carrito de compras</h4>
-      <CartWidget />
+      <Link to="/cart">
+        <h4>Carrito de compras</h4>
+        <CartWidget />
+      </Link>
     </nav>
-  )
-}
+  );
+};
