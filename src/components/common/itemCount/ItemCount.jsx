@@ -28,7 +28,7 @@ export const ItemCount = ({ counter, addOne, subOne, stock }) => {
             border: 1,
             borderRadius: 1,
             borderColor: "rgba(25, 118, 210, 0.5)",
-            userSelect: "none"
+            userSelect: "none",
           }}
         >
           {counter}
@@ -45,7 +45,7 @@ export const ItemCount = ({ counter, addOne, subOne, stock }) => {
 
       <Button
         variant="contained"
-        sx={{ my: 2 }}
+        sx={{ mt: 2 }}
         startIcon={<AddShoppingCartIcon />}
       >
         agregar al carrito

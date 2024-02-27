@@ -13,19 +13,29 @@ export const ProductCard = ({ id, image, title, price }) => {
     <Card
       sx={{
         display: "flex",
+        flexWrap: "wrap",
         flexDirection: "column",
-        justifyContent: "center",
+        alignContent: "center",
+        justifyContent: "space-between",
         backgroundColor: blueGrey[50],
+        width: "320px",
+        height: "520px",
+        pb: "1rem",
       }}
     >
       <CardContent>
         <CardMedia
-          sx={{ p: 0, height: 300, width: 235 }}
+          sx={{ p: 0, height: 300, width: 235, mb: "1rem" }}
           image={image}
           title={title}
         />
 
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ maxWidth: 235 }}
+        >
           {title}
         </Typography>
 
@@ -37,10 +47,8 @@ export const ProductCard = ({ id, image, title, price }) => {
       <CardActions sx={{ mx: "auto" }}>
         {/* <ItemCountContainer stock={stock} /> */}
 
-        <Link to={`/item/${(id)}`}>
-          <Button variant="contained" sx={{ mb: 2 }}>
-            Ver detalles
-          </Button>
+        <Link to={`/item/${id}`}>
+          <Button variant="contained">Ver detalles</Button>
         </Link>
       </CardActions>
     </Card>
