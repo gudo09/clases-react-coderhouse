@@ -1,40 +1,49 @@
 import { Link } from "react-router-dom";
 import { CartWidget } from "../common";
-import { Button } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  ButtonGroup,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
 export const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">
-        <h3>Tienda de videojuegos</h3>
-      </Link>
-
-      <ul>
-        <li>
-          Consolas
-          <ul>
-            <Link to="/category/nintendo-switch">
-              <Button>Nintendo Switch</Button>
-            </Link>
-            <Link to="/category/playstation-5">
-              <Button>Playstation 5</Button>
-            </Link>
-            <Link to="/category/xbox-series">
-              <Button>Xbox Series</Button>
-            </Link>
-          </ul>
-        </li>
-        <li>
-          <Link to="/category/pc">
-            <Button>PC</Button>
-          </Link>
-        </li>
-      </ul>
-
-      <Link to="/cart">
-        <h4>Carrito de compras</h4>
-        <CartWidget />
-      </Link>
-    </nav>
+    <Box>
+      <AppBar position="static">
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Button
+            variant="outlined"
+            component={Link}
+            to={"/"}
+            sx={{ color: "white" }}
+          >
+            <Typography variant="h6"> Tienda de videojuegos</Typography>
+          </Button>
+          <Box>
+            Plataformas:
+            <ButtonGroup variant="contained" sx={{ ml: 2 }}>
+              <Button component={Link} to={"/category/nintendo-switch"}>
+                Nintendo Switch
+              </Button>
+              <Button component={Link} to={"/category/xbox-series"}>
+                Xbox Series
+              </Button>
+              <Button component={Link} to={"/category/playstation-5"}>
+                Playstation 5
+              </Button>
+              <Button component={Link} to={"/category/pc"}>
+                PC
+              </Button>
+            </ButtonGroup>
+          </Box>
+          <Box>
+            <CartWidget />
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };

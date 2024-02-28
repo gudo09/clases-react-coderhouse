@@ -1,11 +1,13 @@
-import { HiShoppingCart } from "react-icons/hi";
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { IconButton } from "@mui/material";
 
 export const CartWidget = () => {
   return (
     <div>
-        <HiShoppingCart color="royalblue" title="Carrito"/>
-        <span>(13)</span>
+      <IconButton aria-label="ShoppingCartIcon">
+        <ShoppingCartIcon sx={{ color: "white" }}></ShoppingCartIcon>
+      </IconButton>
+      <span>(13)</span>
     </div>
-  )
-}
+  );
+};

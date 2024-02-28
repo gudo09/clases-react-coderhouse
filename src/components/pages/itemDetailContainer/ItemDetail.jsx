@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   Container,
+  Divider,
   Typography,
 } from "@mui/material";
 import { ItemCountContainer } from "../../common";
@@ -17,9 +18,9 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
         sx={{
           backgroundColor: blueGrey[50],
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "1fr, 10px, repeat(2, 1fr)",
           gridTemplateRows: "repeat(3, 1fr)",
-          mb: 4,
+          my: "2rem",
           maxHeight: 650,
         }}
       >
@@ -31,15 +32,26 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
             gridColumn: "1 / span 1",
             gridRow: "1 / span 3",
             maxHeight: "90%",
+            maxWidth: "500px",
             objectFit: "contain",
             my: "auto",
           }}
         ></CardMedia>
-
+        <Divider
+          orientation="vertical"
+          variant="middle"
+          flexItem
+          sx={{
+            my: 4,
+            mx: 2,
+            gridColumn: "2 / span 1",
+            gridRow: "1 / span 3",
+          }}
+        />
         <CardContent
           sx={{
             mr: 4,
-            gridColumn: "2 / span 2",
+            gridColumn: "3 / span 2",
             gridRow: "1 / span 1",
             display: "flex",
             flexDirection: "column",
@@ -50,7 +62,9 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
             {" "}
             {title}{" "}
           </Typography>
-          <Typography variant="h4">Descripción</Typography>
+          <Typography variant="h4" sx={{ textDecoration: "underline" }}>
+            Descripción:{" "}
+          </Typography>
           <Typography variant="p"> {description} </Typography>
 
           <Box sx={{ display: "flex", gap: 2, alignItems: "baseline" }}>
@@ -64,7 +78,7 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
         <CardActions
           sx={{
             my: 4,
-            gridColumn: "2 / span 1",
+            gridColumn: "3 / span 1",
             gridRow: "3 / span 1",
           }}
         >
