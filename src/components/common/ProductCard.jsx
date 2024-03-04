@@ -12,34 +12,33 @@ export const ProductCard = ({ id, image, title, price }) => {
   return (
     <Card
       sx={{
+        backgroundColor: blueGrey[50],
         display: "flex",
-        flexWrap: "wrap",
+        flexWrap: "no-wrap",
         flexDirection: "column",
         alignContent: "center",
         justifyContent: "space-between",
-        backgroundColor: blueGrey[50],
-        width: "320px",
         height: "520px",
         pb: "1rem",
       }}
     >
-      <CardContent>
-        <CardMedia
-          sx={{ p: 0, height: 300, width: 235, mb: "1rem" }}
-          image={image}
-          title={title}
-        />
+      <CardMedia
+        image={image}
+        title={title}
+        component="img"
+        sx={{
+          mt: "1rem",
+          maxHeight: "20rem",
+          objectFit: "scale-down",
+        }}
+      />
 
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          sx={{ maxWidth: 235 }}
-        >
+      <CardContent>
+        <Typography gutterBottom variant="h5" textAlign="center">
           {title}
         </Typography>
 
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" textAlign="center">
           ${price}
         </Typography>
       </CardContent>

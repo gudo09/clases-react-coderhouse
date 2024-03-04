@@ -26,6 +26,7 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
       >
         <CardMedia
           image={image}
+          title={title}
           component="img"
           sx={{
             placeSelf: "center",
@@ -36,7 +37,7 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
             objectFit: "contain",
             my: "auto",
           }}
-        ></CardMedia>
+        />
         <Divider
           orientation="vertical"
           variant="middle"
