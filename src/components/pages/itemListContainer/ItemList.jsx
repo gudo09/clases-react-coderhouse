@@ -9,7 +9,6 @@ export const ItemList = ({ items }) => {
         display="grid"
         gridTemplateColumns={{ xl: "repeat(4, 1fr)", md: "repeat(3, 1fr)" }}
         gap={4}
-        sx={{ backgroundColor: "blue" }}
       >
         {/* Map desestructurando */}
         {items.map(({ id, title, image, description, price, stock }) => {
