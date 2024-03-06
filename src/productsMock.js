@@ -1,10 +1,19 @@
+//emul9o delay random para una experiencia mas real
+const getDelay = () => {
+  const delay = Math.floor(
+    Math.random() * (Math.floor(1000) - Math.ceil(200)) + Math.ceil(200)
+  );
+  console.log(delay);
+  return delay;
+};
+
 //emulo asincronía con un settimeout al momento de resolver la peticion
 export const getProducts = () => {
   return new Promise((resolve, reject) => {
     products.length > 0
       ? setTimeout(() => {
           resolve(products);
-        }, 1000)
+        }, getDelay())
       : reject("No hay productos");
   });
 };
@@ -12,13 +21,13 @@ export const getProducts = () => {
 export const getProduct = (id) => {
   return new Promise((resolve, reject) => {
     if (products.length > 0) {
-      const item = products.find((prod) => prod.id === parseInt(id));
+      const item = products.find((prod) => prod.id === id);
 
       setTimeout(() => {
         item
           ? resolve(item)
           : reject(`No se encuentra el producto con el id ${id}`);
-      }, 1000);
+      }, getDelay());
     }
   });
 };
@@ -36,7 +45,7 @@ const products = [
   },
   {
     id: 2,
-    title: "God of War: Ragnarok",
+    title: "God of War: Ragnarök",
     price: 44.99,
     description:
       "God of War Ragnarök is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It was released worldwide on November 9, 2022, for the PlayStation 4 and PlayStation 5, marking the first cross-gen release in the God of War series. It is the ninth installment in the series, the ninth chronologically, and the sequel to 2018's God of War. Loosely based on Norse mythology, the game is set in ancient Scandinavia and features series protagonist Kratos and his teenage son Atreus. Concluding the Norse era of the series, the game covers Ragnarök, the eschatological event which is central to Norse mythology and was foretold to happen in the previous game after Kratos killed the Æsir god Baldur.",

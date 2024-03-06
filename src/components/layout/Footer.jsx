@@ -1,6 +1,5 @@
+import { Box } from "@mui/material";
 
 export const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+  return <Box bgcolor='primary.main'>Footer</Box>;
+};

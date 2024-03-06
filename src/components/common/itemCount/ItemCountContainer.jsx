@@ -1,7 +1,7 @@
 import { ItemCount } from "./ItemCount";
 import { useCount } from "../../hooks";
 
-export const ItemCountContainer = ({ stock }) => {
+export const ItemCountContainer = ({ stock, onAdd }) => {
   //uso el custom hook
   const { count, increment, decrement } = useCount(1);
 
@@ -22,6 +22,6 @@ export const ItemCountContainer = ({ stock }) => {
   };
 
   return (
-    <ItemCount counter={count} addOne={addOne} subOne={subOne} stock={stock} />
+    <ItemCount counter={count} addOne={addOne} subOne={subOne} stock={stock} onAdd={onAdd}/>
   );
 };

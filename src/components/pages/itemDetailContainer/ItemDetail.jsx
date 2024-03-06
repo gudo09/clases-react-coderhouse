@@ -11,7 +11,8 @@ import {
 import { ItemCountContainer } from "../../common";
 import { blueGrey } from "@mui/material/colors";
 
-export const ItemDetail = ({ title, description, image, price, stock }) => {
+export const ItemDetail = ({ item, onAdd }) => {
+  const {image, title, stock, description, price} = item;
   return (
     <Container maxWidth="xl">
       <Card
@@ -83,7 +84,7 @@ export const ItemDetail = ({ title, description, image, price, stock }) => {
             gridRow: "3 / span 1",
           }}
         >
-          <ItemCountContainer stock={stock} />
+          <ItemCountContainer stock={stock} onAdd={onAdd} />
         </CardActions>
       </Card>
     </Container>

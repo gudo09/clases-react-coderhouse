@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 export const Navbar = () => {
   return (
@@ -25,16 +26,32 @@ export const Navbar = () => {
           <Box>
             Plataformas:
             <ButtonGroup variant="contained" sx={{ ml: 2 }}>
-              <Button component={Link} to={"/category/nintendo-switch"}>
+              <Button
+                sx={{ bgcolor: blue[500] }}
+                component={Link}
+                to={"/category/nintendo-switch"}
+              >
                 Nintendo Switch
               </Button>
-              <Button component={Link} to={"/category/xbox-series"}>
+              <Button
+                sx={{ bgcolor: blue[500] }}
+                component={Link}
+                to={"/category/xbox-series"}
+              >
                 Xbox Series
               </Button>
-              <Button component={Link} to={"/category/playstation-5"}>
+              <Button
+                sx={{ bgcolor: blue[500] }}
+                component={Link}
+                to={"/category/playstation-5"}
+              >
                 Playstation 5
               </Button>
-              <Button component={Link} to={"/category/pc"}>
+              <Button
+                sx={{ bgcolor: blue[500] }}
+                component={Link}
+                to={"/category/pc"}
+              >
                 PC
               </Button>
             </ButtonGroup>

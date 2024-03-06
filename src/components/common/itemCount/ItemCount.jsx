@@ -1,7 +1,7 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box, Button, Typography } from "@mui/material";
 
-export const ItemCount = ({ counter, addOne, subOne, stock }) => {
+export const ItemCount = ({ counter, addOne, subOne, stock, onAdd }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Box
@@ -47,6 +47,8 @@ export const ItemCount = ({ counter, addOne, subOne, stock }) => {
         variant="contained"
         sx={{ mt: 2 }}
         startIcon={<AddShoppingCartIcon />}
+        //Para pasar una funcion con parametros, la tengo que enviar como callback en las props
+        onClick={() => onAdd(counter)}
       >
         agregar al carrito
       </Button>
