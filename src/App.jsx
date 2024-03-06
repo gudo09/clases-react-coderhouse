@@ -1,9 +1,9 @@
 import { CssBaseline } from "@mui/material";
 
-import { ItemDetailContainer, ItemListContainer, NotFound404 } from "./components/pages";
+import { CartContainer, ItemDetailContainer, ItemListContainer, NotFound404 } from "./components/pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Cart } from "./components/common";
 import { Layout } from "./components/layout";
+import { CheckoutContainer } from "./components/pages/checkout/CheckoutContainer";
 
 export const App = () => {
   return (
@@ -17,7 +17,9 @@ export const App = () => {
           <Route element={<Layout />}>
             {/* rutas estaticas */}`
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<CartContainer />} />
+            <Route path="/checkout" element={<CheckoutContainer />} />
+
             {/* rutas dinamicas */}
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/category/:category" element={<ItemListContainer />} />

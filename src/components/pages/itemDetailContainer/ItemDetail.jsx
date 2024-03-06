@@ -11,8 +11,7 @@ import {
 import { ItemCountContainer } from "../../common";
 import { blueGrey } from "@mui/material/colors";
 
-export const ItemDetail = ({ item, onAdd }) => {
-  const {image, title, stock, description, price} = item;
+export const ItemDetail = ({ item: {image, title, stock, description, price}, onAdd }) => {
   return (
     <Container maxWidth="xl">
       <Card
