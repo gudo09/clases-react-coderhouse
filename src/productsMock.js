@@ -3,7 +3,6 @@ const getDelay = () => {
   const delay = Math.floor(
     Math.random() * (Math.floor(1000) - Math.ceil(200)) + Math.ceil(200)
   );
-  console.log(delay);
   return delay;
 };
 

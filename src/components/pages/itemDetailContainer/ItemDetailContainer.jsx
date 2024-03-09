@@ -1,9 +1,10 @@
 import { useParams, useNavigate } from "react-router";
 import { ItemDetail } from "./ItemDetail";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { getProduct } from "../../../productsMock";
 import { LoadingProductos } from "../../common";
+import { CartContext } from "../../context/CartContext";
 
 export const ItemDetailContainer = () => {
   //el siguiente param id se usa para acceder a la ruta /item/:id
@@ -14,7 +15,9 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   //useNavigate devuelve una funcion
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const { addToCart, isInCart } = useContext(CartContext);
 
   useEffect(() => {
     //el signo + antes del id lo convierte en number
@@ -22,11 +25,12 @@ export const ItemDetailContainer = () => {
       setItem(resp);
       setIsLoading(false);
     });
-  }, []);
+  }, [id]);
+
   const onAdd = (quantity) => {
     const infoProduct = { ...item, quantity };
-    console.log(infoProduct);
-    navigate("/cart")
+    addToCart(infoProduct);
+    navigate("/cart");
   };
 
   //mientras espera los resultados de la solicitud muestro un loading
