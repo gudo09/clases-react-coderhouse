@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Button, Container } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { CartCard } from "../../common";
 
 export const CartContainer = () => {
-  const { cart, clearCart, removeFromCart } = useContext(CartContext);
+  const { cart, clearCart, removeFromCart, cartTotalPrice } =
+    useContext(CartContext);
 
   return (
     <Container>
@@ -19,6 +20,8 @@ export const CartContainer = () => {
             removeFromCart={removeFromCart}
           ></CartCard>
         ))}
+
+        <Typography>Total a pagar: $ {cartTotalPrice()}</Typography>
       </Container>
       <Button onClick={() => clearCart()}>Limpiar carrito</Button>
       <Button component={Link} to="/checkout" variant="contained">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // declaro initial con valor con
-export const useCount = (initial = 0) => {
+export const useCount = (initial) => {
   const [count, setCount] = useState(initial);
 
   const increment = () => {

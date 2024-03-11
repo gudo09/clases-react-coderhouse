@@ -17,8 +17,7 @@ export const ItemDetailContainer = () => {
   //useNavigate devuelve una funcion
   const navigate = useNavigate();
 
-  const { addToCart, isInCart } = useContext(CartContext);
-
+  const { addToCart, cartCountById } = useContext(CartContext);
   useEffect(() => {
     //el signo + antes del id lo convierte en number
     getProduct(+id).then((resp) => {
@@ -39,7 +38,11 @@ export const ItemDetailContainer = () => {
       {isLoading ? (
         <LoadingProductos />
       ) : (
-        <ItemDetail item={{ ...item }} onAdd={onAdd} />
+        <ItemDetail
+          item={{ ...item }}
+          onAdd={onAdd}
+          initial={cartCountById(+id)}
+        />
       )}
     </>
   );

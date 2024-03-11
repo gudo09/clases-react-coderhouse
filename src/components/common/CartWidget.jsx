@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 export const CartWidget = () => {
-  const { cart } = useContext(CartContext);
+  const { cartWidgetCount } = useContext(CartContext);
   const navigate = useNavigate();
 
   return (
@@ -14,7 +14,7 @@ export const CartWidget = () => {
         aria-label="ShoppingCartIcon"
         onClick={() => navigate("/cart")}
       >
-        <Badge badgeContent={cart.length} showZero color="secondary">
+        <Badge badgeContent={cartWidgetCount()} showZero color="secondary">
           <ShoppingCartIcon sx={{ color: "white" }}></ShoppingCartIcon>
         </Badge>
       </IconButton>

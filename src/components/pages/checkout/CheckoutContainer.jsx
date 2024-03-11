@@ -9,9 +9,6 @@ export const CheckoutContainer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("se envió el form");
-    console.log(user.name);
-    console.log(user.lastName);
   };
 
   const handleUser = (e) => {

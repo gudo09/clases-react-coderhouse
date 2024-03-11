@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  console.log(cart);
 
   const addToCart = (product) => {
     // si no está en el carrito lo agrego
@@ -18,7 +17,7 @@ export const CartContextProvider = ({ children }) => {
         elementoCart.id === product.id
           ? {
               ...elementoCart,
-              quantity: elementoCart.quantity + product.quantity,
+              quantity: product.quantity,
             }
           : elementoCart
       )
@@ -34,8 +33,37 @@ export const CartContextProvider = ({ children }) => {
   // elimino los productos del carrito creando un nuevo arreglo del filter con los elementos que no correspondan al id
   const removeFromCart = (id) =>
     setCart(cart.filter((product) => product.id !== id));
+
   const cartModify = () => {};
 
-  let data = { cart, addToCart, removeFromCart, cartModify, clearCart };
+  const cartWidgetCount = () => {
+    return cart.reduce(
+      (accumulator, current) => accumulator + current.quantity,
+      0
+    );
+  };
+
+  const cartTotalPrice = () => {
+    return cart.reduce(
+      (accumulator, current) => accumulator + current.price * current.quantity,
+      0
+    );
+  };
+
+  const cartCountById = (id) => {
+    let result = cart.find((product) => product.id === id);
+    return result ? result.quantity : undefined;
+  };
+
+  let data = {
+    cart,
+    addToCart,
+    removeFromCart,
+    cartModify,
+    clearCart,
+    cartWidgetCount,
+    cartTotalPrice,
+    cartCountById,
+  };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };

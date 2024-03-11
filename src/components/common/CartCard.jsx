@@ -13,7 +13,6 @@ export const CartCard = ({
   product: { id, image, title, price, quantity },
   removeFromCart,
 }) => {
-  console.log(image);
   return (
     <Card sx={{ display: "flex", padding: "1rem" }}>
       <CardMedia
@@ -35,6 +34,7 @@ export const CartCard = ({
           }}
         ></Box>
       </CardMedia>
+
       <CardContent sx={{ flexGrow: "1" }}>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="body1" display="block">
@@ -44,6 +44,8 @@ export const CartCard = ({
           Cantidad: {quantity}
         </Typography>
       </CardContent>
+
+
       <CardActions>
         <IconButton
           aria-label="delete"
