@@ -30,31 +30,8 @@ export const getProduct = (id) => {
     }
   });
 };
-const products = [
+export const products = [  
   {
-    id: 1,
-    title: "Halo Infinite",
-    price: 34.99,
-    description:
-      "The legendary Halo series returns with the most expansive Master Chief campaign yet and a ground-breaking free to play multiplayer experience.",
-    image:
-      "https://res.cloudinary.com/dqfayh5a7/image/upload/v1709064629/49feac9b-3d47-4cc4-a6eb-d252cd680a13_az99do.jpg",
-    stock: 10,
-    category: "xbox-series",
-  },
-  {
-    id: 2,
-    title: "God of War: Ragnarök",
-    price: 44.99,
-    description:
-      "God of War Ragnarök is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It was released worldwide on November 9, 2022, for the PlayStation 4 and PlayStation 5, marking the first cross-gen release in the God of War series. It is the ninth installment in the series, the ninth chronologically, and the sequel to 2018's God of War. Loosely based on Norse mythology, the game is set in ancient Scandinavia and features series protagonist Kratos and his teenage son Atreus. Concluding the Norse era of the series, the game covers Ragnarök, the eschatological event which is central to Norse mythology and was foretold to happen in the previous game after Kratos killed the Æsir god Baldur.",
-    image:
-      "https://res.cloudinary.com/dqfayh5a7/image/upload/v1709064631/b8142354-84b8-4fab-9a12-2a5c5dfdc0d1_x4idek.jpg",
-    stock: 4,
-    category: "playstation-5",
-  },
-  {
-    id: 3,
     title: "The Legend of Zelda: Breath of the wild",
     price: 59.99,
     description:
@@ -65,7 +42,6 @@ const products = [
     category: "nintendo-switch",
   },
   {
-    id: 4,
     title: "Half-Life: Alyx",
     price: 30.99,
     description:

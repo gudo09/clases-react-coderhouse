@@ -1,8 +1,7 @@
-import { Button, Container, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Container, Typography } from "@mui/material";
+import { ReturnToHomeButton } from "../common";
 
 export const NotFound404 = () => {
-  const navigate = useNavigate()
   return (
     <>
       <Container
@@ -21,9 +20,7 @@ export const NotFound404 = () => {
         <Typography variant="h1" fontWeight={500}>
           Error 404
         </Typography>
-        <Button variant="contained" size="large" sx={{mb:10}} onClick={() => navigate("/")}>
-          Volver al inicio
-        </Button>
+        <ReturnToHomeButton />
       </Container>
     </>
   );

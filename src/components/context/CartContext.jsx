@@ -1,30 +1,41 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
   const addToCart = (product) => {
     // si no está en el carrito lo agrego
     if (!isInCart(product.id)) {
+      //además lo guardo en localStorage
       setCart([...cart, product]);
-      return;
+    } else {
+      //creo un nuevo array para setear el carrito con todos los productos que ya tiene
+      //y si hay uno que ya está en el carrito le sumo la cantidad al que ya está en él
+      setCart(
+        cart.map((elementoCart) =>
+          elementoCart.id === product.id
+            ? {
+                ...elementoCart,
+                quantity: product.quantity,
+              }
+            : elementoCart
+        )
+      );
     }
-
-    //y si está en el carrito le sumo la cantidad al que ya está en él
-    setCart(
-      cart.map((elementoCart) =>
-        elementoCart.id === product.id
-          ? {
-              ...elementoCart,
-              quantity: product.quantity,
-            }
-          : elementoCart
-      )
-    );
   };
 
-  const clearCart = () => setCart([]);
+  useEffect(() => {
+    cart.length
+      ? localStorage.setItem("cart", JSON.stringify(cart))
+      : localStorage.removeItem("cart");
+  }, [cart]);
+
+  const clearCart = () => {
+    setCart([]);
+  };
 
   const isInCart = (id) => {
     return cart.some((product) => product.id === id);
@@ -34,8 +45,6 @@ export const CartContextProvider = ({ children }) => {
   const removeFromCart = (id) =>
     setCart(cart.filter((product) => product.id !== id));
 
-  const cartModify = () => {};
-
   const cartWidgetCount = () => {
     return cart.reduce(
       (accumulator, current) => accumulator + current.quantity,
@@ -44,11 +53,13 @@ export const CartContextProvider = ({ children }) => {
   };
 
   const cartTotalPrice = () => {
-    return cart.reduce(
-      (accumulator, current) => accumulator + current.price * current.quantity,
-      0
-    );
+    let total = cart.reduce((accumulator, current) => {
+      return accumulator + current.price * current.quantity;
+    }, 0);
+    return roundDecimal(total);
   };
+
+  const roundDecimal = (n) => parseFloat(n.toFixed(2));
 
   const cartCountById = (id) => {
     let result = cart.find((product) => product.id === id);
@@ -59,7 +70,6 @@ export const CartContextProvider = ({ children }) => {
     cart,
     addToCart,
     removeFromCart,
-    cartModify,
     clearCart,
     cartWidgetCount,
     cartTotalPrice,

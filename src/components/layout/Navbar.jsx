@@ -3,57 +3,32 @@ import { CartWidget } from "../common";
 import {
   AppBar,
   Box,
-  Button,
   ButtonGroup,
+  IconButton,
   Toolbar,
-  Typography,
 } from "@mui/material";
-import { blue } from "@mui/material/colors";
+import { menuNavigation } from "../../routes/menuNavigation";
 
 export const Navbar = () => {
   return (
     <Box>
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Button
+          <IconButton
+            disableRipple
             variant="outlined"
             component={Link}
             to={"/"}
             sx={{ color: "white" }}
           >
-            <Typography variant="h6"> Tienda de videojuegos</Typography>
-          </Button>
+            <img src="../../logo.png" style={{ width: "90px" }} />
+          </IconButton>
           <Box>
             Plataformas:
             <ButtonGroup variant="contained" sx={{ ml: 2 }}>
-              <Button
-                sx={{ bgcolor: blue[500] }}
-                component={Link}
-                to={"/category/nintendo-switch"}
-              >
-                Nintendo Switch
-              </Button>
-              <Button
-                sx={{ bgcolor: blue[500] }}
-                component={Link}
-                to={"/category/xbox-series"}
-              >
-                Xbox Series
-              </Button>
-              <Button
-                sx={{ bgcolor: blue[500] }}
-                component={Link}
-                to={"/category/playstation-5"}
-              >
-                Playstation 5
-              </Button>
-              <Button
-                sx={{ bgcolor: blue[500] }}
-                component={Link}
-                to={"/category/pc"}
-              >
-                PC
-              </Button>
+              {menuNavigation.map(({ id, Element, path, categoryName }) => (
+                <Element key={id} to={path} categoryName={categoryName} />
+              ))}
             </ButtonGroup>
           </Box>
           <Box>

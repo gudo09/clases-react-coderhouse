@@ -18,7 +18,7 @@ export const ProductCard = ({ id, image, title, price }) => {
         flexDirection: "column",
         alignContent: "center",
         justifyContent: "space-between",
-        height: "520px",
+        height: "32rem",
         pb: "1rem",
       }}
     >
@@ -28,7 +28,7 @@ export const ProductCard = ({ id, image, title, price }) => {
         component="img"
         sx={{
           mt: "1rem",
-          maxHeight: "20rem",
+          maxHeight: "18rem",
           objectFit: "scale-down",
         }}
       />

@@ -2,9 +2,10 @@ import { useParams, useNavigate } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
-import { getProduct } from "../../../productsMock";
 import { LoadingProductos } from "../../common";
 import { CartContext } from "../../context/CartContext";
+import { db } from "../../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
   //el siguiente param id se usa para acceder a la ruta /item/:id
@@ -18,13 +19,26 @@ export const ItemDetailContainer = () => {
   const navigate = useNavigate();
 
   const { addToCart, cartCountById } = useContext(CartContext);
+
   useEffect(() => {
-    //el signo + antes del id lo convierte en number
-    getProduct(+id).then((resp) => {
-      setItem(resp);
-      setIsLoading(false);
-    });
+    //obtengo la colección (tabla en SQL)
+    let productsCollection = collection(db, "products");
+
+    //referenciamos al documento (registro en SQL), diciendole en qué colección buscar y qué id buscar
+    let refDoc = doc(productsCollection, id);
+
+    getData(refDoc);
   }, [id]);
+
+  const getData = async (refDoc) => {
+    try {
+      let res = await getDoc(refDoc);
+      //seteo el item con un objeto que contenga el id y lo que tenga en data desencriptandolo con el metodo data()
+      setItem({ ...res.data(), id });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const onAdd = (quantity) => {
     const infoProduct = { ...item, quantity };
@@ -41,7 +55,7 @@ export const ItemDetailContainer = () => {
         <ItemDetail
           item={{ ...item }}
           onAdd={onAdd}
-          initial={cartCountById(+id)}
+          initial={cartCountById(id)}
         />
       )}
     </>
