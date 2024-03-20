@@ -1,12 +1,20 @@
-import './App.css'
+import { CssBaseline } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import { CartContextProvider } from "./components/context/CartContext";
+import { AppRouter } from "./routes/AppRouter";
 
-const App = ()=> {
 
+export const App = () => {
   return (
     <>
-      Está todo listo para comenzar
-    </>
-  )
-}
+      <BrowserRouter>
+        {/*Reseteo los estilos de CSS con el componente CssBaseline de Material UI*/}
+        <CssBaseline />
 
-export default App
+        <CartContextProvider>
+          <AppRouter />
+        </CartContextProvider>
+      </BrowserRouter>
+    </>
+  );
+};
