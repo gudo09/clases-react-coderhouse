@@ -33,7 +33,6 @@ export const ItemListContainer = () => {
       productsCollection,
       where("category", "==", category)
     );
-    console.log("productsCollectionFiltered" + productsCollectionFiltered);
     return productsCollectionFiltered;
   };
 

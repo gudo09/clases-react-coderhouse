@@ -2,7 +2,7 @@ import { Container, Typography } from "@mui/material";
 import { ProductCard } from "../../common";
 
 export const ItemList = ({ items, textCategory }) => {
-  //console.log( items ) // uso console.log para testear que se pasen bien las props
+
 
   return (
     <>
@@ -12,6 +12,7 @@ export const ItemList = ({ items, textCategory }) => {
           mt: "2rem",
           display: "grid",
           gridTemplateColumns: { xl: "repeat(4, 1fr)", md: "repeat(3, 1fr)" },
+          gridTemplateRows: "1.5rem auto",
           gap: 4,
         }}
       >

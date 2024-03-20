@@ -31,9 +31,4 @@ export const useFetch = (url) => {
     data: state.data,
     isLoading: state.isLoading,
   };
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
 };

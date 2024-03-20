@@ -12,12 +12,6 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_APP_ID,
-  // apiKey: "AIzaSyAVVv6BeSu6pyefMB_3pdhxg6l5tyLMr7A",
-  // authDomain: "gudo09-tienda-videojuegos.firebaseapp.com",
-  // projectId: "gudo09-tienda-videojuegos",
-  // storageBucket: "gudo09-tienda-videojuegos.appspot.com",
-  // messagingSenderId: "180985811718",
-  // appId: "1:180985811718:web:18873f8b30ad5a13850487",
 };
 
 // Initialize Firebase
