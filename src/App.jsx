@@ -8,6 +8,7 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
+
         {/*Reseteo los estilos de CSS con el componente CssBaseline de Material UI*/}
         <CssBaseline />
 

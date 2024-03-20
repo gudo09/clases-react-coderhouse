@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const ButtonCategory = ({ to, categoryName }) => {
   return (
-    <Button  to={to} sx={{ bgcolor: blue[500] }} component={Link}>
+    <Button to={to} component={Link}>
       {categoryName}
     </Button>
   );

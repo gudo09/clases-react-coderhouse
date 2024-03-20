@@ -27,7 +27,7 @@ export const ItemCount = ({ counter, addOne, subOne, stock, onAdd }) => {
             px: 2,
             border: 1,
             borderRadius: 1,
-            borderColor: "rgba(25, 118, 210, 0.5)",
+            borderColor: "primary.main",
             userSelect: "none",
           }}
         >

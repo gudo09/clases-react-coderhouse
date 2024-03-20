@@ -6,6 +6,7 @@ import {
   ButtonGroup,
   IconButton,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import { menuNavigation } from "../../routes/menuNavigation";
 
@@ -21,7 +22,21 @@ export const Navbar = () => {
             to={"/"}
             sx={{ color: "white" }}
           >
-            <img src="../../logo.png" style={{ width: "90px" }} />
+            <img
+              src="../../logo.png"
+              style={{
+                width: "50px",
+                filter: "drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.50))",
+              }}
+            />
+            <Typography
+              variant="h5"
+              fontWeight={900}
+              ml={1}
+              sx={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.50)" }}
+            >
+              Monkey Games
+            </Typography>
           </IconButton>
           <Box>
             Plataformas:
