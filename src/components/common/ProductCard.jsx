@@ -12,7 +12,7 @@ export const ProductCard = ({ id, image, title, price }) => {
   return (
     <Card
       sx={{
-        backgroundColor: blueGrey[50],
+        backgroundColor: "#efefef",
         display: "flex",
         flexWrap: "no-wrap",
         flexDirection: "column",

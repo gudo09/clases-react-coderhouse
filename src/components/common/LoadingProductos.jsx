@@ -4,11 +4,11 @@ export const LoadingProductos = () => {
   return (
     <Container
       maxWidth="lg"
-      sx={{ mt: "4rem", display: "flex", justifyContent: "center" }}
+      sx={{ mt: "20rem", display: "flex", justifyContent: "center" }}
     >
-      <CircularProgress size={25} />
+      <CircularProgress size={40} />
       <Typography
-        variant="h5"
+        variant="h4"
         sx={{ verticalAlign: "top", fontWeight: "500", ml: "0.5rem" }}
       >
         Cargando productos

@@ -12,8 +12,6 @@ Cosas para finalizar el proyecto:
 
 - Validar formulario del checkout (en el componente FormFormik hay ayuda) y hacer algo con el onSubmit
 
-- Logo de la tienda
-
 - mover el itemlistempty.jsx a common y modificar las importaciones. Esto para sólo hacer rendering condicional desde itemlist.jsx
 
 - el componente que muestra la orden de compra (CheckoutSuccess) deberia mostrarse en una tarjeta grande y en la orden de compra debería haber un boton clipboard para copiar al portapapeles la misma

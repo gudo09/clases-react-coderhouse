@@ -1,2 +1,2 @@
-export { ItemList } from './ItemList';
+export { ItemList } from './ItemList';
 export { ItemListContainer } from './ItemListContainer';

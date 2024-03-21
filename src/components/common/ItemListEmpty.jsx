@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { ReturnToHomeButton } from "../../common";
+import { ReturnToHomeButton } from ".";
 
 export const ItemListEmpty = () => {
   return (

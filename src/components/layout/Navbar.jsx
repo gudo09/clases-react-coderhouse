@@ -12,8 +12,14 @@ import { menuNavigation } from "../../routes/menuNavigation";
 
 export const Navbar = () => {
   return (
-    <Box>
-      <AppBar position="static">
+    <Box
+      sx={{
+        m: "0.5rem",
+        borderRadius: "30px",
+        overflow: "hidden",
+      }}
+    >
+      <AppBar position="static" sx={{ p: "0.3rem 1rem" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
             disableRipple
@@ -26,6 +32,7 @@ export const Navbar = () => {
               src="../../logo.png"
               style={{
                 width: "50px",
+
                 filter: "drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.50))",
               }}
             />

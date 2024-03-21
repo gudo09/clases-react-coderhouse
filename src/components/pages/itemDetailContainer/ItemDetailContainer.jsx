@@ -6,6 +6,7 @@ import { LoadingProductos } from "../../common";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { collection, doc, getDoc } from "firebase/firestore";
+import { NotFound404 } from "../NotFound404";
 
 export const ItemDetailContainer = () => {
   //el siguiente param id se usa para acceder a la ruta /item/:id
@@ -33,6 +34,8 @@ export const ItemDetailContainer = () => {
   const getData = async (refDoc) => {
     try {
       let res = await getDoc(refDoc);
+      // si el server no trae respuesta, hago return para despues renderizar el 404 not found
+      if (res.data() === undefined) return;
       //seteo el item con un objeto que contenga el id y lo que tenga en data desencriptandolo con el metodo data()
       setItem({ ...res.data(), id });
     } finally {
@@ -51,12 +54,14 @@ export const ItemDetailContainer = () => {
     <>
       {isLoading ? (
         <LoadingProductos />
-      ) : (
+      ) : item ? (
         <ItemDetail
           item={{ ...item }}
           onAdd={onAdd}
           initial={cartCountById(id)}
         />
+      ) : (
+        <NotFound404 />
       )}
     </>
   );

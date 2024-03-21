@@ -40,6 +40,14 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
           onChange={handleUser}
         />
 
+        <TextField
+          name="confirmEmail"
+          label="Confirmar correo electrónico"
+          placeholder="Ingresá nuevamente tu e-mail"
+          variant="outlined"
+          onChange={handleUser}
+        />
+
         {/*A los botones de Material UI se les debe aclarar que son de tipo submit cuando estan dentro de un formulario*/}
 
         <Button
