@@ -2,7 +2,7 @@ export { ButtonCategory } from './ButtonCategory';
 export { CartCard } from './CartCard';
 export { CartWidget } from './CartWidget';
 export { CheckoutSuccess } from './CheckoutSuccess';
-export { FormFormik } from './FormFormik';
+//export { FormFormik } from './FormFormik';
 export { ItemListEmpty } from './ItemListEmpty';
 export { LoadingProductos } from './LoadingProductos';
 export { ProductCard } from './ProductCard';
