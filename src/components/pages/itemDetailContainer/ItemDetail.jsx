@@ -24,7 +24,7 @@ export const ItemDetail = ({
           display: "grid",
           gridTemplateColumns: "1fr, 10px, repeat(2, 1fr)",
           gridTemplateRows: "repeat(3, 1fr)",
-          my: "2rem",
+          mb: "2rem",
           maxHeight: 650,
         }}
       >

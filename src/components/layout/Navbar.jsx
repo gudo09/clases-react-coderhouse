@@ -15,6 +15,7 @@ export const Navbar = () => {
     <Box
       sx={{
         m: "0.5rem",
+        mb: "2rem",
         borderRadius: "30px",
         overflow: "hidden",
       }}
@@ -53,6 +54,11 @@ export const Navbar = () => {
               ))}
             </ButtonGroup>
           </Box>
+          {/*//acá iría el boton de tema oscuro
+              <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+                {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+              </IconButton>
+              */}
           <Box>
             <CartWidget />
           </Box>

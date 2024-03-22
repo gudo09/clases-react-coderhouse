@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
-import { blueGrey } from "@mui/material/colors";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -18,7 +17,7 @@ export const ProductCard = ({ id, image, title, price }) => {
         flexDirection: "column",
         alignContent: "center",
         justifyContent: "space-between",
-        height: "32rem",
+        height: "23rem",
         pb: "1rem",
       }}
     >
@@ -28,13 +27,13 @@ export const ProductCard = ({ id, image, title, price }) => {
         component="img"
         sx={{
           mt: "1rem",
-          maxHeight: "18rem",
+          maxHeight: "12rem",
           objectFit: "scale-down",
         }}
       />
 
-      <CardContent>
-        <Typography gutterBottom variant="h5" textAlign="center">
+      <CardContent sx={{ py: 0, flexGrow: 1, mt: "0.5rem" }}>
+        <Typography gutterBottom variant="h6" textAlign="center">
           {title}
         </Typography>
 
@@ -43,7 +42,7 @@ export const ProductCard = ({ id, image, title, price }) => {
         </Typography>
       </CardContent>
 
-      <CardActions sx={{ mx: "auto" }}>
+      <CardActions sx={{ mx: "auto", p: 0 }}>
         {/* <ItemCountContainer stock={stock} /> */}
 
         <Link to={`/item/${id}`}>

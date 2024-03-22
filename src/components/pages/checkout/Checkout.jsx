@@ -12,10 +12,16 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
   if (orderId) return <CheckoutSuccess orderId={orderId} />;
   return (
     <Container>
-      <Typography variant="h3">Checkout</Typography>
+      <Typography variant="h3" mb="1rem">
+        Checkout
+      </Typography>
 
       {/*Por defecto el onSubmit de React envía el evento para que sea utilizado */}
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}
+      >
         <TextField
           name="name"
           label="Nombre"
@@ -50,17 +56,29 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
 
         {/*A los botones de Material UI se les debe aclarar que son de tipo submit cuando estan dentro de un formulario*/}
 
-        <Button
-          variant="contained"
-          disabled={isLoading}
-          size="large"
-          type="submit"
+        <Box
+          sx={{
+            gridColumn: "1 /-1",
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          Comprar
-          {isLoading && (
-            <CircularProgress size="1rem" color="inherit" sx={{ ml: "1rem" }} />
-          )}
-        </Button>
+          <Button
+            variant="contained"
+            disabled={isLoading}
+            size="large"
+            type="submit"
+          >
+            Finalizar compra
+            {isLoading && (
+              <CircularProgress
+                size="1rem"
+                color="inherit"
+                sx={{ ml: "1rem" }}
+              />
+            )}
+          </Button>
+        </Box>
       </Box>
     </Container>
   );

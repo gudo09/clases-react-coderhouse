@@ -1,6 +1,6 @@
 Cosas para finalizar el proyecto:
 
-- Añadir SweetAlert2 en el carrito (alerta al limpiar el carrito o eliminar un producto) y en el contador al alcanzar el stock maximo de un producto (clase 12)
+- Validar formulario del checkout (en el componente FormFormik hay ayuda) y hacer algo con el onSubmit
 
 - Añadir rendering condicional para avisar cuantas unidades tiene ya en el cart (clase 12)
 
@@ -8,11 +8,11 @@ Cosas para finalizar el proyecto:
 
 - Añadir Sketelon de la librería MUI cuando se cargan las cards (clase 12)
 
+- implementar productos sin stock (que no se muesten en el itemlist y en la ruta del producto deshabilitar el itemcount y mostar 0 o sin stoc)
+
+- eliminar el navigation al cart al agregar al carrito e implementar un toastify para mostra que producto se agregó al carrito
+
 - Redactar el Readme.md (clase 15)
-
-- Validar formulario del checkout (en el componente FormFormik hay ayuda) y hacer algo con el onSubmit
-
-- mover el itemlistempty.jsx a common y modificar las importaciones. Esto para sólo hacer rendering condicional desde itemlist.jsx
 
 - el componente que muestra la orden de compra (CheckoutSuccess) deberia mostrarse en una tarjeta grande y en la orden de compra debería haber un boton clipboard para copiar al portapapeles la misma
 
@@ -22,4 +22,6 @@ Cosas para finalizar el proyecto:
 
 - Dar estilos al footer
 
-- Cambiar paleta de colores
+- Añadir SweetAlert2 en el carrito (alerta al limpiar el carrito o eliminar un producto) y en el contador al alcanzar el stock maximo de un producto (clase 12)
+
+- dark mode

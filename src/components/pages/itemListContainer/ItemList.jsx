@@ -6,9 +6,9 @@ export const ItemList = ({ items, textCategory }) => {
     <Container
       maxWidth="xl"
       sx={{
-        mt: "2rem",
+        mb: "2rem",
         display: "grid",
-        gridTemplateColumns: { xl: "repeat(4, 1fr)", md: "repeat(3, 1fr)" },
+        gridTemplateColumns: { xl: "repeat(6, 1fr)", md: "repeat(3, 1fr)" },
         gridTemplateRows: "1.5rem auto",
         gap: 4,
       }}
