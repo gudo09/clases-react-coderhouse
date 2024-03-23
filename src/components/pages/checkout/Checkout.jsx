@@ -6,9 +6,17 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+
 import { CheckoutSuccess } from "../../common/CheckoutSuccess";
 
-export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
+export const Checkout = ({
+  handleSubmit,
+  handleChange,
+  orderId,
+  isLoading,
+  errors,
+  handleKeyPress,
+}) => {
   if (orderId) return <CheckoutSuccess orderId={orderId} />;
   return (
     <Container>
@@ -27,15 +35,31 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
           label="Nombre"
           placeholder="Ingresá tu nombre"
           variant="outlined"
-          onChange={handleUser}
+          onChange={handleChange}
+          error={errors.name? true : false}
+          helperText={errors.name}
         />
+        <TextField
+          name="lastName"
+          label="Apellido"
+          placeholder="Ingresá tu apellido"
+          variant="outlined"
+          onChange={handleChange}
+          error={errors.lastName? true : false}
+          helperText={errors.lastName}
+        />
+
         <TextField
           name="phone"
           label="Teléfono"
           placeholder="Ingresá tu número de telefono"
           type="tel"
           variant="outlined"
-          onChange={handleUser}
+          inputProps={{ maxLength: 10 }}
+          onChange={handleChange}
+          error={errors.phone? true : false}
+          helperText={errors.phone}
+          onKeyPress={handleKeyPress}
         />
 
         <TextField
@@ -43,7 +67,12 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
           label="Correo electrónico"
           placeholder="Ingresá tu e-mail"
           variant="outlined"
-          onChange={handleUser}
+          onChange={handleChange}
+          error={errors.email? true : false}
+          helperText={errors.email}
+          sx={{
+            gridColumn: "1 /2",
+          }}
         />
 
         <TextField
@@ -51,7 +80,10 @@ export const Checkout = ({ handleSubmit, handleUser, orderId, isLoading }) => {
           label="Confirmar correo electrónico"
           placeholder="Ingresá nuevamente tu e-mail"
           variant="outlined"
-          onChange={handleUser}
+          onPaste={(e) => e.target.prevent.default}
+          onChange={handleChange}
+          error={errors.confirmEmail? true : false}
+          helperText={errors.confirmEmail}
         />
 
         {/*A los botones de Material UI se les debe aclarar que son de tipo submit cuando estan dentro de un formulario*/}

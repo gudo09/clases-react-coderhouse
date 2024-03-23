@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router";
+import { useParams /*,useNavigate*/ } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
@@ -17,7 +17,7 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   //useNavigate devuelve una funcion
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const { addToCart, cartCountById } = useContext(CartContext);
 
@@ -46,7 +46,7 @@ export const ItemDetailContainer = () => {
   const onAdd = (quantity) => {
     const infoProduct = { ...item, quantity };
     addToCart(infoProduct);
-    navigate("/cart");
+    //navigate("/cart");
   };
 
   //mientras espera los resultados de la solicitud muestro un loading

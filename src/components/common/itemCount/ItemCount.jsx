@@ -3,12 +3,12 @@ import { Box, Button, Typography } from "@mui/material";
 
 export const ItemCount = ({ counter, addOne, subOne, stock, onAdd }) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", mt: "0.5rem" }}>
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "center",
+          justifyContent: "bottom",
           width: "100%",
         }}
       >
@@ -24,7 +24,9 @@ export const ItemCount = ({ counter, addOne, subOne, stock, onAdd }) => {
           variant="h6"
           sx={{
             mx: 2,
-            px: 2,
+            p: 1,
+            textAlign: "center",
+            width: "3rem",
             border: 1,
             borderRadius: 1,
             borderColor: "primary.main",

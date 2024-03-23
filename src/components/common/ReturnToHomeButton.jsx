@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export const ReturnToHomeButton = () => {
-  const navigate = useNavigate()
+export const ReturnToHomeButton = ({ messageButton = "Volver al inicio" }) => {
+  const navigate = useNavigate();
   return (
     <Button
       variant="contained"
@@ -10,7 +10,7 @@ export const ReturnToHomeButton = () => {
       sx={{ mb: 10 }}
       onClick={() => navigate("/")}
     >
-      Volver al inicio
+      {messageButton}
     </Button>
   );
 };

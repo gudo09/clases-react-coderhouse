@@ -17,7 +17,7 @@ export const ItemDetail = ({
   initial,
 }) => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Card
         sx={{
           backgroundColor: blueGrey[50],
@@ -25,7 +25,7 @@ export const ItemDetail = ({
           gridTemplateColumns: "1fr, 10px, repeat(2, 1fr)",
           gridTemplateRows: "repeat(3, 1fr)",
           mb: "2rem",
-          maxHeight: 650,
+          maxHeight: 600,
         }}
       >
         <CardMedia
@@ -33,11 +33,12 @@ export const ItemDetail = ({
           title={title}
           component="img"
           sx={{
+            pl: "0.75rem",
             placeSelf: "center",
             gridColumn: "1 / span 1",
             gridRow: "1 / span 3",
-            maxHeight: "90%",
-            maxWidth: "500px",
+            maxHeight: "80%",
+            maxWidth: "470px",
             objectFit: "contain",
             my: "auto",
           }}
@@ -63,18 +64,18 @@ export const ItemDetail = ({
             gap: "1rem",
           }}
         >
-          <Typography variant="h2" sx={{ mt: 2, fontWeight: 700 }}>
+          <Typography variant="h3" sx={{ mt: 2, fontWeight: 400 }}>
             {" "}
             {title}{" "}
           </Typography>
-          <Typography variant="h4" sx={{ textDecoration: "underline" }}>
+          <Typography variant="h5" sx={{ textDecoration: "underline" }}>
             Descripción:{" "}
           </Typography>
           <Typography variant="p"> {description} </Typography>
 
-          <Box sx={{ display: "flex", gap: 2, alignItems: "baseline" }}>
+          <Box sx={{ display: "flex", gap: 1, alignItems: "baseline" }}>
             <Typography variant="h5">Precio:</Typography>
-            <Typography variant="h4" sx={{ fontWeight: 600 }}>
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
               ${price}
             </Typography>
           </Box>
@@ -82,9 +83,10 @@ export const ItemDetail = ({
 
         <CardActions
           sx={{
-            my: 4,
+            my: 2,
             gridColumn: "3 / span 1",
-            gridRow: "3 / span 1",
+            gridRow: "2 / span 2",
+            alignItems: "end",
           }}
         >
           <ItemCountContainer stock={stock} onAdd={onAdd} initial={initial} />

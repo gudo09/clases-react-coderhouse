@@ -10,13 +10,13 @@ export const theme = createTheme({
       main: "#118ab5",
     },
     info: {
-      main: "#85148c",
+      main: "#76AB91",
     },
     success: {
       main: "#60ab68",
     },
     warning: {
-      main: "#ff9800",
+      main: "#CD1010",
     },
   },
   typography: {

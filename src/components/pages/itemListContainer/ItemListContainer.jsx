@@ -6,7 +6,7 @@ import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { Box } from "@mui/material";
-import { ItemListEmpty } from "../../common";
+import { Empty } from "../../common";
 
 export const ItemListContainer = () => {
   //creamos un estado para almacenar el arreglo de productos
@@ -42,7 +42,7 @@ export const ItemListContainer = () => {
       let result = await getDocs(productsCollection);
       unstructer(result);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +76,7 @@ export const ItemListContainer = () => {
         ) : items.length > 0 ? (
           <ItemList items={items} textCategory={categoryToSring(category)} />
         ) : (
-          <ItemListEmpty />
+          <Empty />
         ) //monto el componente en el segundo renderizado porque en el primero el estado items es un arreglo vacío y da error
       }
     </Box>
